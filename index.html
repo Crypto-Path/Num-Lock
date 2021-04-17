@@ -15,9 +15,18 @@
 </head>
 
 <body>
+
+    <div id="Game">
+    </div>
+
 </body>
 
 <script type="text/javascript">
+    var c = document.getElementById("Game");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.rect(20, 20, 150, 100);
+    ctx.stroke();
 </script>
 
 </html>
