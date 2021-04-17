@@ -9,7 +9,7 @@
 <body>
     Debug: v1.1
     <div class="">
-        <img src="PKMNBall.png" onclick="javascript:PKMNDadd(1)"></img>
+        <img id="Clicker" src="PKMNBall.png" onclick="PKMNDadd(1)"></img>
     </div>
 
 </body>
@@ -20,6 +20,10 @@
     function PKMNDadd(_amount) {
         PKMND += _amount;
     }
+
+    document
+        .getElementById("Clicker")
+        .addEventListener("Clicker", PKMNDadd);
 </script>
 
 </html>
