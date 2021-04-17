@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 
+<style type="text/css">
+    #PKMNBall {
+        float: middle;
+    }
+    
+    #Menu {
+        float: right;
+    }
+</style>
+
 <head>
     <title>
         Page
@@ -8,8 +18,13 @@
 
 <body>
     Debug: v1.1
-    <div class="">
-        <img id="Clicker" src="PKMNBall.png" onclick="PKMNDadd(1)"></img>
+
+    <div id="Menu">
+        <img id="PKMNB" src="PKMNBall.png" onclick="PKMNDadd(1)"></img>
+    </div>
+
+    <div id="PKMNBall">
+        <img id="PKMNB" src="PKMNBall.png" onclick="PKMNDadd(1)"></img>
     </div>
 
 </body>
@@ -22,8 +37,8 @@
     }
 
     document
-        .getElementById("Clicker")
-        .addEventListener("Clicker", PKMNDadd);
+        .getElementById("PKMNB")
+        .addEventListener("PKMNB", PKMNDadd);
 </script>
 
 </html>
