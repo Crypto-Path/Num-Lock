@@ -8,6 +8,30 @@
     #Menu {
         float: right;
     }
+    /* Modal Content */
+    
+    .menu-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+    /* The Close Button */
+    
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
 </style>
 
 <head>
@@ -17,7 +41,17 @@
 </head>
 
 <body>
-    <div id="Menu">
+    <div id="Menu" class="Menu">
+
+        <!-- Modal content -->
+        <div class="menu-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+
+    <div id="MenuButton">
         <button id="MenuB" onclick=""></img>
     </div>
 
@@ -28,15 +62,32 @@
 </body>
 
 <script type="text/javascript">
+    //Menu Stuff
+    var modal = document.getElementById("Menu");
+    var btn = document.getElementById("MenuB");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    //Pokeball stuff
     var PKMND = 0;
 
     function PKMNDadd(_amount) {
         PKMND += _amount;
     }
 
-    document
-        .getElementById("PKMNB")
-        .addEventListener("PKMNB", PKMNDadd);
+    document.getElementById("PKMNB").addEventListener("PKMNB", PKMNDadd);
 </script>
 
 </html>
