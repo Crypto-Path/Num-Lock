@@ -15,18 +15,225 @@
 </head>
 
 <body>
+    <div id="MainScreen">
+        <div id="MainScreen-Menu">
+            <div id="MainScreen-Menu-Title">
+                <!-- 
+                Large image at middle top screen "Num-Lock"
+            -->
+            </div>
+            <!--Main-Title-->
 
-    <div id="Game">
+            <div id="MainScreen-Menu-FullScreen">
+                <!--
+                Button at top right that toggles fullscreen
+            -->
+            </div>
+            <!--FullScreen-Button-->
+
+            <div id="MainScreen-Menu-Buttons">
+
+                <div id="MainScreen-Menu-Buttons-Play">
+                    <!--
+                    Button that plays the song thats playing
+                -->
+                </div>
+                <!--Play-Buttons-->
+
+                <div id="MainScreen-Menu-Buttons-SongSelect">
+                    <!--
+                    Button that opens a menu to select the song to be played
+                -->
+                </div>
+                <!--Song-Select-Menu-Button-->
+
+                <div id="MainScreen-Menu-Buttons-Settings">
+                    <!--
+                    Button that opens menu to change settings
+                -->
+                </div>
+                <!--Settings-MenuuButton-->
+            </div>
+            <!--Main-Buttons-->
+        </div>
+        <!--Main-Menu-->
+        <div id="MainScreen-Game">
+            <div id="MainScreen-Game-Columns">
+                <div id="MainScreen-Game-Columns-1">
+                    <!--
+                    Left most column for notes
+                -->
+                </div>
+                <!--Game-Columns-1-->
+                <div id="MainScreen-Game-Columns-2">
+                    <!--
+                    Left column for notes
+                -->
+                </div>
+                <!--Game-Columns-2-->
+                <div id="MainScreen-Game-Columns-3">
+                    <!--
+                    Right column for notes
+                -->
+                </div>
+                <!--Game-Columns-3-->
+                <div id="MainScreen-Game-Columns-4">
+                    <!--
+                    Right most column
+                -->
+                </div>
+                <!--Game-Columns-4-->
+            </div>
+            <!--Game-Columns-->
+        </div>
+        <!--Game-->
+        <div id="MainScreen-SongSelect">
+            <div id="MainScreen-SongSelect-Filters">
+                <div id="MainScreen-SongSelect-Filters-Search">
+                    <!--
+                    Searchbar to search fo songs
+                -->
+                </div>
+                <!--MainScreen-SongSelect-Filters-Search-->
+                <div id="MainScreen-SongSelect-Filters-Popdown">
+                    <div id="MainScreen-SongSelect-Filters-Popdown-Trending">
+                        <!--
+                        Popdown menu option shows trending songs
+                        (Most played in last ~30 days)
+                    -->
+                    </div>
+                    <!--MainScreen-SongSelect-Filters-Popdown-Trending-->
+                    <div id="MainScreen-SongSelect-Filters-Popdown-Top">
+                        <!--
+                        Popdown menu option shows top songs
+                        (Most favorites)
+                    -->
+                    </div>
+                    <!--MainScreen-SongSelect-Filters-Popdown-Top-->
+                    <div id="MainScreen-SongSelect-Filters-Popdown-New">
+                        <!--
+                        Popdown menu option shows new songs
+                        (Song maps published in the last month)
+                    -->
+                    </div>
+                    <!--MainScreen-SongSelect-Filters-Popdown-New-->
+                    <div id="MainScreen-SongSelect-Filters-Popdown-MostPlayed">
+                        <!--
+                        Popdown menu option shows most played song maps
+                        (Songs that have the most plays)
+                    -->
+                    </div>
+                    <!--MainScreen-SongSelect-Filters-Popdown-MostPlayed-->
+                </div>
+                <!--MainScreen-SongSelect-Filters-Popdown-->
+            </div>
+            <!--MainScreen-SongSelect-Filters-->
+            <div id="MainScreen-SongSelect-Listing">
+                <div id="MainScreen-SongSelect-Listing-Button">
+                    <div id="MainScreen-SongSelect-Listing-Button-Image">
+                        <!--
+                        Shows song map background in mini image to the left
+                    -->
+                    </div>
+                    <!--MainScreen-SongSelect-Listing-Button-Image-->
+                    <div id="MainScreen-SongSelect-Listing-Button-Title">
+                        <!--
+                        Title of song
+                    -->
+                    </div>
+                    <!--MainScreen-SongSelect-Listing-Button-Title-->
+                    <div id="MainScreen-SongSelect-Listing-Button-Author">
+                        <!--
+                        Shows author of song and user who created the map
+                        (*Song Author*/*Map Creator*)
+                    -->
+                    </div>
+                    <!--MainScreen-SongSelect-Listing-Button-Author-->
+                    <div id="MainScreen-SongSelect-Listing-Button-Stats">
+                        <!--
+                        Song stats
+                        Favorites
+                        Plays
+                        Map Length
+                        Difficultys:
+                        -Easy 0-60 bp, -Medium 60-120 bpm, -Hard 120-240 bpm, -Insane 240-360 bpm, -Extra 360+ bmp
+                        Date Published (Month/Day/Year Hr:Min AM/PM)
+                    -->
+                    </div>
+                    <!--MainScreen-SongSelect-Listing-Button-Stats-->
+                    <div id="MainScreen-SongSelect-Listing-Button-Rank">
+                        <!--
+
+                    -->
+                    </div>
+                    <!--MainScreen-SongSelect-Listing-Button-Rank-->
+                </div>
+                <!--MainScreen-SongSelect-Listing-Button-->
+                <!--
+                    Song Select Button, 2x10
+                    /------------------------------\
+                    | /BG\ |Title--------| |Rank|  |
+                    | \BG/ |Author-------| |Rank|  |
+                    | <Favorites> <Plays> <Length> |
+                    | <Difficultys> <Date Publish> |
+                    \------------------------------/
+                -->
+            </div>
+            <!--MainScreen-SongSelect-Listing-->
+        </div>
+        <!--MainScreen-SongSelect-->
+        <div id="MainScreen-Settings">
+            <div id="MainScreen-Settings-Options">
+                <div id="MainScreen-Settings-Options-Gameplay">
+                    <div id="MainScreen-Settings-Options-Gameplay-OptionControl">
+                        <div id="MainScreen-Settings-Options-Gameplay-OptionControl-Keybinds">
+                            <div id="MainScreen-Settings-Options-Gameplay-OptionControl-Keybinds-Key1">
+                                <!--
+                                    Default: D
+                                    Key for left most note hitter
+                            -->
+                            </div>
+                            <div id="MainScreen-Settings-Options-Gameplay-OptionControl-Keybinds-Key2">
+                                <!--
+                                    Default: f
+                                    Key for middle left note hitter
+                            -->
+                            </div>
+                            <div id="MainScreen-Settings-Options-Gameplay-OptionControl-Keybinds-Key3">
+                                <!--
+                                    Default: j
+                                    Key for middle right note hitter
+                            -->
+                            </div>
+                            <div id="MainScreen-Settings-Options-Gameplay-OptionControl-Keybinds-Key4">
+                                <!--
+                                    Default: k
+                                    Key for right most note hitter
+                            -->
+                            </div>
+                        </div>
+                        <div id="MainScreen-Settings-Options-Gameplay-OptionControl-ScrollSpeed">
+                            <!--
+                                Scroll speed how fast note objects go down in game
+                        -->
+                        </div>
+                        <div id="MainScreen-Settings-Options-Gameplay-OptionControl-Latency">
+                            <!--
+                                Change delay between music and when to hit the note
+                        -->
+                        </div>
+                    </div>
+                </div id="MainScreen-Settings-Options-Other">
+                <div>
+
+                </div>
+            </div>
+        </div>
     </div>
-
+    <!--MainScreen-->
 </body>
 
 <script type="text/javascript">
-    var c = document.getElementById("Game");
-    var ctx = c.getContext("2d");
-    ctx.beginPath();
-    ctx.rect(20, 20, 150, 100);
-    ctx.stroke();
 </script>
 
 </html>
