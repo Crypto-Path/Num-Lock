@@ -30,12 +30,13 @@
             -->
             </div>
             <!--FullScreen-Button-->
-            <div class="MainScreen-Menu-Buttons">
+            <div class="MainScreen-Menu-Buttons" style=" width:100%;height:100%">
+                <canvas style="background-color: #d3d3d3; position: absolute;transform: translate(1019px,507px);width:210px;height:150px"></canvas>
                 <div class="MainScreen-Menu-Buttons-Play ">
                     <!--
                         Button that plays the song thats playing
                     -->
-                    <button style="color:limegreen; width: 200px; height: 40px; ">
+                    <button class="MainScreen-Menu-Buttons-Play-Button" style="color:limegreen; width: 200px; height: 40px; position: absolute; transform: translate(1024px,512px);">
                             Play
                         </button>
                 </div>
@@ -44,7 +45,7 @@
                     <!--
                         Button that opens a menu to select the song to be played
                     -->
-                    <button style="color:blue; width: 200px; height: 40px; ">
+                    <button class="MainScreen-Menu-Buttons-SongSelect-Button" onclick="OpenSongSelector()" style="color:blue; width: 200px; height: 40px; position: absolute;transform: translate(1024px,562px);">
                             Select Song
                         </button>
                 </div>
@@ -53,7 +54,7 @@
                     <!--
                         Button that opens menu to change settings
                     -->
-                    <button style="color:orange; width: 200px; height: 40px; ">
+                    <button style="color:orange; width: 200px; height: 40px; position: absolute;transform: translate(1024px,612px);">
                             Settings
                         </button>
                 </div>
@@ -92,16 +93,25 @@
             <!--Game-Columns-->
         </div>
         <!--Game-->
-        <div id="MainScreen-SongSelect ">
-            <div id="MainScreen-SongSelect-Filters ">
-                <div id="MainScreen-SongSelect-Filters-Search ">
+        <div id="MainScreen-SongSelect" style="visibility: hidden;">
+            <canvas id="MainScreen-SongSelect-Background" style="background-color: #d3d3d3; position:absolute;width:98.5%;height:97.5%;"></canvas>
+            <!-- transform:translate(128px,64px);width: 1024px; height:512px;-->
+            <div id="MainScreen-SongSelect-ExitButton">
+                <button style="position: absolute;transform:translate(1240px,10px);width:35px;height:35px;" onclick="CloseSongSelector()">x</button>
+            </div>
+            <pre style="position: absolute;">
+No songs yet...
+            </pre>
+            <!--MainScreen-SongSelect-ExitButton-->
+            <div id="MainScreen-SongSelect-Filters">
+                <div id="MainScreen-SongSelect-Filters-Search">
                     <!--
                     Searchbar to search fo songs
                 -->
                 </div>
                 <!--MainScreen-SongSelect-Filters-Search-->
-                <div id="MainScreen-SongSelect-Filters-Popdown ">
-                    <div id="MainScreen-SongSelect-Filters-Popdown-Trending ">
+                <div id="MainScreen-SongSelect-Filters-Popdown">
+                    <div id="MainScreen-SongSelect-Filters-Popdown-Trending">
                         <!--
                         Popdown menu option shows trending songs
                         (Most played in last ~30 days)
@@ -253,6 +263,17 @@
 </body>
 
 <script>
+    var SongSelectorOpen = false
+
+    function OpenSongSelector() {
+        document.getElementById("MainScreen-SongSelect").style.visibility = "visible";
+        SongSelectorOpen = true
+    }
+
+    function CloseSongSelector() {
+        document.getElementById("MainScreen-SongSelect").style.visibility = "hidden";
+        SongSelectorOpen = true
+    }
 </script>
 
 </html>
