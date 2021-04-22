@@ -94,14 +94,11 @@
         </div>
         <!--Game-->
         <div id="MainScreen-SongSelect" style="visibility: hidden;">
-            <canvas id="MainScreen-SongSelect-Background" style="background-color: #d3d3d3; position:absolute;width:98.5%;height:97.5%;"></canvas>
+            <canvas id="MainScreen-SongSelect-Background" style="background-color: #d3d3d3; position:absolute;width:1285px;height:680px;"></canvas>
             <!-- transform:translate(128px,64px);width: 1024px; height:512px;-->
             <div id="MainScreen-SongSelect-ExitButton">
                 <button style="position: absolute;transform:translate(1240px,10px);width:35px;height:35px;" onclick="CloseSongSelector()">x</button>
             </div>
-            <pre style="position: absolute;">
-No songs yet...
-            </pre>
             <!--MainScreen-SongSelect-ExitButton-->
             <div id="MainScreen-SongSelect-Filters">
                 <div id="MainScreen-SongSelect-Filters-Search">
@@ -143,46 +140,30 @@ No songs yet...
                 <!--MainScreen-SongSelect-Filters-Popdown-->
             </div>
             <!--MainScreen-SongSelect-Filters-->
-            <div id="MainScreen-SongSelect-Listing ">
-                <div id="MainScreen-SongSelect-Listing-Button ">
-                    <div id="MainScreen-SongSelect-Listing-Button-Image ">
-                        <!--
-                        Shows song map background in mini image to the left
-                    -->
+            <div id="MainScreen-SongSelect-Listing">
+                <class id="MainScreen-SongSelect-Listing-Button">
+                    <div id="MainScreen-SongSelect-Listing-Button-Image">
+                        <img src="Images/Grey.png" alt="DefaultBG" style="width:50px;height:50px;position:absolute;transform:translate(50px,50px);">
                     </div>
                     <!--MainScreen-SongSelect-Listing-Button-Image-->
-                    <div id="MainScreen-SongSelect-Listing-Button-Title ">
-                        <!--
-                        Title of song
-                    -->
+                    <div id="MainScreen-SongSelect-Listing-Button-Title">
+                        <a style="position:absolute;transform:translate(110px,50px);">Song Title</a>
                     </div>
                     <!--MainScreen-SongSelect-Listing-Button-Title-->
-                    <div id="MainScreen-SongSelect-Listing-Button-Author ">
-                        <!--
-                        Shows author of song and user who created the map
-                        (*Song Author*/*Map Creator*)
-                    -->
+                    <div id="MainScreen-SongSelect-Listing-Button-Author">
+                        <a style="position:absolute;transform:translate(110px,80px);">Song Author</a>
                     </div>
                     <!--MainScreen-SongSelect-Listing-Button-Author-->
-                    <div id="MainScreen-SongSelect-Listing-Button-Stats ">
-                        <!--
-                        Song stats
-                        Favorites
-                        Plays
-                        Map Length
-                        Difficultys:
-                        -Easy 0-60 bp, -Medium 60-120 bpm, -Hard 120-240 bpm, -Insane 240-360 bpm, -Extra 360+ bmp
-                        Date Published (Month/Day/Year Hr:Min AM/PM)
-                    -->
+                    <div id="MainScreen-SongSelect-Listing-Button-Stats">
+                        <a style="position:absolute;transform:translate(50px,110px);">Favorites, Plays, Map Length,<br>Difficultys[Easy,Medium,Hard,Insane,Extra],<br>Date Published[Month/Day/Year Hr:Min AM/PM]</a>
                     </div>
                     <!--MainScreen-SongSelect-Listing-Button-Stats-->
-                    <div id="MainScreen-SongSelect-Listing-Button-Rank ">
-                        <!--
-
-                    -->
+                    <div id="MainScreen-SongSelect-Listing-Button-Rank">
+                        <img src="Images/Grey.png" alt="DefaultBG" style="width:50px;height:50px;position:absolute;transform:translate(200px,50px);">
+                        <a style="position:absolute;transform:translate(200px,50px);">Rank<br>img</a>
                     </div>
                     <!--MainScreen-SongSelect-Listing-Button-Rank-->
-                </div>
+                </class>
                 <!--MainScreen-SongSelect-Listing-Button-->
                 <!--
                     Song Select Button, 2x10
