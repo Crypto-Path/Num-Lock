@@ -36,7 +36,7 @@
                     <!--
                         Button that plays the song thats playing
                     -->
-                    <button class="MainScreen-Menu-Buttons-Play-Button" style="color:limegreen; width: 200px; height: 40px; position: absolute; transform: translate(1024px,512px);">
+                    <button class="MainScreen-Menu-Buttons-Play-Button" onclick="playSong()" style="color:limegreen; width: 200px; height: 40px; position: absolute; transform: translate(1024px,512px);">
                             Play
                         </button>
                 </div>
@@ -63,30 +63,22 @@
             <!--MainScreen-Menu-Buttons-->
         </div>
         <!--Main-Menu-->
-        <div id="MainScreen-Game ">
-            <div id="MainScreen-Game-Columns ">
-                <div id="MainScreen-Game-Columns-1 ">
-                    <!--
-                    Left most column for notes
-                -->
+        <div id="MainScreen-Game">
+            <div id="MainScreen-Game-Columns">
+                <div id="MainScreen-Game-Columns-1">
+                    <canvas id="MainScreen-Game-Columns-1-Image" style="background-color: #808080;position:absolute; transform: translate(50px,500px); width:50px; height:15px;"></canvas>
                 </div>
                 <!--Game-Columns-1-->
-                <div id="MainScreen-Game-Columns-2 ">
-                    <!--
-                    Left column for notes
-                -->
+                <div id="MainScreen-Game-Columns-2">
+                    <canvas id="MainScreen-Game-Columns-2-Image" style="background-color: #808080;position:absolute; transform: translate(120px,500px); width:50px; height:15px;"></canvas>
                 </div>
                 <!--Game-Columns-2-->
-                <div id="MainScreen-Game-Columns-3 ">
-                    <!--
-                    Right column for notes
-                -->
+                <div id="MainScreen-Game-Columns-3">
+                    <canvas id="MainScreen-Game-Columns-3-Image" style="background-color: #808080;position:absolute; transform: translate(190px,500px); width:50px; height:15px;"></canvas>
                 </div>
                 <!--Game-Columns-3-->
-                <div id="MainScreen-Game-Columns-4 ">
-                    <!--
-                    Right most column
-                -->
+                <div id="MainScreen-Game-Columns-4">
+                    <canvas id="MainScreen-Game-Columns-4-Image" style="background-color: #808080;position:absolute; transform: translate(260px,500px); width:50px; height:15px;"></canvas>
                 </div>
                 <!--Game-Columns-4-->
             </div>
@@ -143,24 +135,24 @@
             <div id="MainScreen-SongSelect-Listing">
                 <class id="MainScreen-SongSelect-Listing-Button">
                     <div id="MainScreen-SongSelect-Listing-Button-Image">
-                        <img src="Images/Grey.png" alt="DefaultBG" style="width:50px;height:50px;position:absolute;transform:translate(50px,50px);">
+                        <img src="Images/Grey.png" alt="DefaultBG" style="width:50px;height:50px;position:absolute;transform:translate(50px,100px);">
                     </div>
                     <!--MainScreen-SongSelect-Listing-Button-Image-->
                     <div id="MainScreen-SongSelect-Listing-Button-Title">
-                        <a style="position:absolute;transform:translate(110px,50px);">Song Title</a>
+                        <a style="position:absolute;transform:translate(110px,100px);">Test Title</a>
                     </div>
                     <!--MainScreen-SongSelect-Listing-Button-Title-->
                     <div id="MainScreen-SongSelect-Listing-Button-Author">
-                        <a style="position:absolute;transform:translate(110px,80px);">Song Author</a>
+                        <a style="position:absolute;transform:translate(110px,130px);">Test Author</a>
                     </div>
                     <!--MainScreen-SongSelect-Listing-Button-Author-->
                     <div id="MainScreen-SongSelect-Listing-Button-Stats">
-                        <a style="position:absolute;transform:translate(50px,110px);">Favorites, Plays, Map Length,<br>Difficultys[Easy,Medium,Hard,Insane,Extra],<br>Date Published[Month/Day/Year Hr:Min AM/PM]</a>
+                        <a style="position:absolute;transform:translate(50px,160px);">Favorites: 0, Plays: 0, Map Length: 0:05,<br>Difficultys[____],<br>Date Published[4/24/2021 11:56 AM]</a>
+                        <a title="Difficulty: Easy" style="position:absolute;transform:translate(125px,177.5px);color:blue;" onclick="selectSong('Songs/TestSong.js')">Easy</a>
                     </div>
                     <!--MainScreen-SongSelect-Listing-Button-Stats-->
                     <div id="MainScreen-SongSelect-Listing-Button-Rank">
-                        <img src="Images/Grey.png" alt="DefaultBG" style="width:50px;height:50px;position:absolute;transform:translate(200px,50px);">
-                        <a style="position:absolute;transform:translate(200px,50px);">Rank<br>img</a>
+                        <img src="Images/Rank-SS.png" alt="DefaultBG" style="width:50px;height:50px;position:absolute;transform:translate(300px,100px);">
                     </div>
                     <!--MainScreen-SongSelect-Listing-Button-Rank-->
                 </class>
@@ -243,20 +235,65 @@
     <!--MainScreen-->
 </body>
 
-<script src="Scripts/jquery.js"></script>
+<script src="Scripts/notes.js"></script>
+
 <script>
-    var SongSelectorOpen = false
+    var buttonPressed = 0;
+    var SongSelectorOpen = false;
+    var SongStarted = false;
+    var Song = "";
 
     function OpenSongSelector() {
         document.getElementById("MainScreen-SongSelect").style.visibility = "visible";
-        SongSelectorOpen = true
+        SongSelectorOpen = true;
     }
 
     function CloseSongSelector() {
         document.getElementById("MainScreen-SongSelect").style.visibility = "hidden";
-        SongSelectorOpen = false
+        SongSelectorOpen = false;
+    }
+
+    function selectSong(_file) {
+        Song = _file;
+    }
+
+    function playSong() {
+        SongStarted = true;
+    }
+
+    function update() {
+        if (SongStarted == true) {
+            SongStarted = false;
+            var script = document.createElement('script');
+            script.onload = function() {};
+            script.src = `${Song}`;
+            document.getElementsByTagName('head')[0].appendChild(script);
+        }
+    }
+    var mainloop = function() {
+        update();
+    };
+    setInterval(mainloop, 1024);
+
+    document.addEventListener('keydown', logKey);
+
+    function logKey(e) {
+        if (`${e.code}` == "KeyD") {
+            buttonPressed = 4;
+        }
+        if (`${e.code}` == "KeyF") {
+            buttonPressed = 3;
+        }
+        if (`${e.code}` == "KeyJ") {
+            buttonPressed = 2;
+        }
+        if (`${e.code}` == "KeyK") {
+            buttonPressed = 1;
+        }
+        setTimeout(function() {
+            buttonPressed = 0;
+        }, 100);
     }
 </script>
-
 
 </html>
