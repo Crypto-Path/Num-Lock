@@ -1,8 +1,10 @@
-TotalNotes = 0;
+TotalNotes = 10;
 var time = 0;
 
 function update() {
-    time += 1;
+    if (time >= 0) {
+        time += 1;
+    }
     if (time == 50) {
         createNote(1);
         createNote(4);
